@@ -1,3 +1,4 @@
+import "./style.css";
 import { Slide } from "./slide";
 
 let currentSlide = null;

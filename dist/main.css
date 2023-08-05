@@ -1,0 +1,61 @@
+/*!*****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
+  \*****************************************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --slider-height: 30rem;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#slider {
+  position: relative;
+  height: var(--slider-height);
+  width: 100%;
+  max-width: 1000px;
+  background-color: rgb(255, 192, 192);
+}
+
+.arrow {
+  position: absolute;
+  top: calc(var(--slider-height) / 2.5);
+  transform: scale(0.7);
+  filter: opacity(0.5);
+  transition: filter 0.5s ease-out, transform 0.5s ease-out;
+
+  /* Prevent user to drag arrows */
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.arrow#left {
+  left: 1px;
+}
+
+.arrow#right {
+  right: 1px;
+}
+
+.arrow:hover {
+  transform: scale(0.8);
+  filter: none;
+}
+
+.arrow:active {
+  background: red;
+}
+

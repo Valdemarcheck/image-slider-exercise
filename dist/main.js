@@ -9,6 +9,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/style.css":
+/*!***********************!*\
+  !*** ./src/style.css ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://image-slider-exercise/./src/style.css?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -16,7 +27,7 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slide */ \"./src/slide.js\");\n\n\nlet currentSlide = null;\nlet slides = [];\n\nfunction setupSlide(imageUrl) {\n  console.log(\"🚀 ~ file: index.js:7 ~ setupSlide ~ imageUrl:\", imageUrl);\n  const slide = new _slide__WEBPACK_IMPORTED_MODULE_0__.Slide(imageUrl);\n  slides.push(slide);\n  console.log(\"🚀 ~ file: index.js:10 ~ setupSlide ~ slides:\", slides);\n}\n\nsetupSlide(\"./images/1.jpg\");\n\n\n//# sourceURL=webpack://image-slider-exercise/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _slide__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./slide */ \"./src/slide.js\");\n\n\n\nlet currentSlide = null;\nlet slides = [];\n\nfunction setupSlide(imageUrl) {\n  console.log(\"🚀 ~ file: index.js:7 ~ setupSlide ~ imageUrl:\", imageUrl);\n  const slide = new _slide__WEBPACK_IMPORTED_MODULE_1__.Slide(imageUrl);\n  slides.push(slide);\n  console.log(\"🚀 ~ file: index.js:10 ~ setupSlide ~ slides:\", slides);\n}\n\nsetupSlide(\"./images/1.jpg\");\n\n\n//# sourceURL=webpack://image-slider-exercise/./src/index.js?");
 
 /***/ }),
 
