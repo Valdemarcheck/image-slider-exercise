@@ -19,9 +19,23 @@ body {
 #slider {
   position: relative;
   height: var(--slider-height);
+  padding: 2rem;
   width: 100%;
   max-width: 1000px;
   background-color: rgb(255, 192, 192);
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10rem;
+}
+
+.sliderImage {
+  min-height: 15rem;
+}
+
+.sliderImage.invisible {
+  filter: blur(0.5) opacity(0.9);
 }
 
 .arrow {
