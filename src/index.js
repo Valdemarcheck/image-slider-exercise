@@ -5,15 +5,7 @@ import image4 from "./images/4.jpg";
 import image5 from "./images/5.jpg";
 
 import "./style.css";
-
-class Indicator {
-  constructor(frame, framePosition) {
-    this.div = document.createElement("div");
-    this.div.classList.add("indicator");
-    this.frame = frame;
-    this.framePosition = framePosition;
-  }
-}
+import Indicator from "./Indicator";
 
 const FRAME_MANAGER = { frames: [], current: null };
 const INDICATORS = [];
@@ -41,8 +33,8 @@ leftArrow.addEventListener("click", () => {
 })();
 
 function setupIndicators(frames) {
-  frames.forEach((frame, i) => {
-    const indicator = new Indicator(frame, i);
+  for (let i = 0; i < frames.length; i++) {
+    const indicator = new Indicator(i);
     INDICATORS.push(indicator);
 
     frameIndicatorsDiv.append(indicator.div);
@@ -51,7 +43,7 @@ function setupIndicators(frames) {
         newPosition: indicator.framePosition,
       });
     });
-  });
+  }
 }
 
 function goToFrame({ newPosition }) {
@@ -59,18 +51,15 @@ function goToFrame({ newPosition }) {
     FRAME_MANAGER,
     FRAME_MANAGER.current
   );
-  console.log(newPosition, currentFramePosition);
 
   if (currentFramePosition === newPosition) return;
   else if (newPosition < currentFramePosition) {
     const steps = currentFramePosition - newPosition;
-    console.log(steps);
     for (let i = 0; i < steps; i++) {
       move(DIRECTIONS.left);
     }
   } else {
     const steps = newPosition - currentFramePosition;
-    console.log(steps);
     for (let i = 0; i < steps; i++) {
       move(DIRECTIONS.right);
     }
@@ -78,7 +67,6 @@ function goToFrame({ newPosition }) {
 }
 
 function move(direction) {
-  console.log("doing move");
   const currentFramePosition = getFramePosition(
     FRAME_MANAGER,
     FRAME_MANAGER.current
@@ -93,7 +81,6 @@ function move(direction) {
     window.getComputedStyle(sliderFramesDiv, null).getPropertyValue("left")
   );
 
-  console.log(sliderCurrentPosition, frameWidth, frameGap);
   let sliderFramesDivNewPosition = null;
   if (direction === DIRECTIONS.right) {
     sliderFramesDivNewPosition = sliderCurrentPosition - frameWidth - frameGap;
@@ -140,7 +127,7 @@ function setupFrame(sliderFramesDiv, imageURL) {
   FRAME_MANAGER.frames.push(frame);
   if (imageURL) {
     const imageElem = document.createElement("img");
-    imageElem.url = imageURL;
+    imageElem.src = imageURL;
     frame.append(imageElem);
   }
 }
